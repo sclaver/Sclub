@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escapada Norte de Italia · Bérgamo, Lagos y Verona</title>
+  <style>
+    :root {
+      --bg:#f7f3ec; --ink:#1f2933; --muted:#64748b; --card:#fff;
+      --accent:#0f766e; --accent2:#b45309; --dark:#102a43;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    img { width:100%; display:block; object-fit:cover; }
+    a { color:inherit; text-decoration:none; }
+    .hero {
+      min-height:88vh;
+      background:linear-gradient(90deg,rgba(15,23,42,.82),rgba(15,23,42,.34)),url("https://upload.wikimedia.org/wikipedia/commons/3/39/Italia_Bergamo_15.JPG");
+      background-size:cover; background-position:center; color:#fff; display:flex; align-items:center; padding:48px 6vw;
+    }
+    .hero-inner { max-width:980px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:13px; font-weight:800; opacity:.9; margin-bottom:18px; }
+    h1 { font-size:clamp(42px,7vw,84px); line-height:.95; margin:0 0 24px; max-width:900px; }
+    .hero p { max-width:720px; font-size:clamp(18px,2vw,24px); margin:0 0 28px; color:#e2e8f0; }
+    .badges { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .badge { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(8px); padding:10px 14px; border-radius:999px; font-weight:800; font-size:14px; }
+    .section { padding:72px 6vw; max-width:1240px; margin:0 auto; }
+    .section.narrow { max-width:980px; }
+    .section-title { font-size:clamp(30px,4vw,52px); line-height:1.05; margin:0 0 14px; color:var(--dark); }
+    .section-subtitle { color:var(--muted); font-size:18px; max-width:760px; margin:0 0 34px; }
+    .grid { display:grid; gap:22px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card { background:var(--card); border-radius:24px; overflow:hidden; box-shadow:0 18px 45px rgba(15,23,42,.10); border:1px solid rgba(15,23,42,.06); }
+    .card-body { padding:24px; }
+    .card h3 { margin:0 0 8px; font-size:24px; color:var(--dark); }
+    .card p { margin:0; color:var(--muted); }
+    .image-card img { height:250px; background:#ddd; }
+    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#ecfdf5; color:#047857; font-weight:900; font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px; }
+    .pill.orange { background:#fff7ed; color:#b45309; }
+    .pill.blue { background:#eff6ff; color:#1d4ed8; }
+    table { width:100%; border-collapse:collapse; background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 18px 45px rgba(15,23,42,.08); }
+    th,td { padding:16px 18px; text-align:left; border-bottom:1px solid #e5e7eb; vertical-align:top; }
+    th { background:#102a43; color:white; font-size:14px; text-transform:uppercase; letter-spacing:.08em; }
+    tr:last-child td { border-bottom:0; }
+    .total-row td { font-weight:900; background:#f0fdfa; color:#0f766e; }
+    .timeline { display:grid; gap:18px; }
+    .day { display:grid; grid-template-columns:130px 1fr; gap:22px; background:#fff; border-radius:24px; padding:22px; box-shadow:0 12px 32px rgba(15,23,42,.08); }
+    .day-label { font-weight:900; color:var(--accent2); text-transform:uppercase; letter-spacing:.08em; font-size:13px; }
+    .day h3 { margin:0 0 6px; font-size:24px; }
+    .day ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
+    .split { display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; }
+    .hotel-hero { min-height:380px; background:linear-gradient(180deg,rgba(15,23,42,.08),rgba(15,23,42,.72)),url("https://upload.wikimedia.org/wikipedia/commons/3/39/Italia_Bergamo_15.JPG"); background-size:cover; background-position:center; border-radius:28px; display:flex; align-items:end; padding:26px; color:white; box-shadow:0 18px 45px rgba(15,23,42,.16); }
+    .callout { background:#102a43; color:white; border-radius:28px; padding:34px; display:grid; gap:12px; box-shadow:0 18px 45px rgba(15,23,42,.18); }
+    .callout h2 { margin:0; font-size:34px; }
+    .callout p { margin:0; color:#cbd5e1; font-size:18px; }
+    .photo-credit { font-size:12px; color:#64748b; margin-top:12px; }
+    .footer { padding:42px 6vw; text-align:center; color:var(--muted); }
+    @media(max-width:900px) {
+      .grid-3,.grid-4,.split { grid-template-columns:1fr; }
+      .day { grid-template-columns:1fr; }
+      .hero { min-height:760px; }
+    }
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">5–10 julio 2026 · Vuelo directo desde Zaragoza</div>
+    <h1>Bérgamo, Lago Como, Milán y Verona</h1>
+    <p>Escapada cómoda al norte de Italia: base segura en Bérgamo, hotel con desayuno, excursiones en tren y paisajes de lago sin necesidad de alquilar coche.</p>
+    <div class="badges">
+      <div class="badge">✈️ ZAZ → BGY directo</div><div class="badge">🏨 Hotel con desayuno</div><div class="badge">🚆 Excursiones en tren</div><div class="badge">💶 Presupuesto controlado</div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <h2 class="section-title">Resumen rápido</h2>
+  <p class="section-subtitle">Dormir todas las noches en Bérgamo y usar la ciudad como base cómoda para hacer excursiones seleccionadas.</p>
+  <div class="grid grid-4">
+    <div class="card"><div class="card-body"><span class="pill">Vuelos</span><h3>138 € / persona</h3><p>Incluye ida, vuelta y 38 € por trayecto de maleta de mano.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill orange">Hotel</span><h3>519 € / pareja</h3><p>Hotel Excelsior San Marco, 5 noches con desayuno incluido.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill blue">Base</span><h3>Bérgamo</h3><p>Zona segura, cómoda y bien conectada con trenes regionales.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill">Plan</span><h3>Sin coche</h3><p>Coche solo opcional para Lago Iseo/Franciacorta.</p></div></div>
+  </div>
+</section>
+
+<section class="section split">
+  <div>
+    <h2 class="section-title">Hotel elegido</h2>
+    <p class="section-subtitle"><strong>Hotel Excelsior San Marco</strong>. Buena zona, segura, entre la parte baja y la subida a Città Alta. Mejor sensación urbana que alojarse pegados a estación, pero suficientemente práctico para moverse.</p>
+    <table>
+      <tr><th>Aspecto</th><th>Valoración</th></tr>
+      <tr><td>Precio</td><td><strong>519 € total</strong>, 5 noches, desayuno incluido</td></tr>
+      <tr><td>Seguridad</td><td>Muy buena zona para volver de noche con tranquilidad</td></tr>
+      <tr><td>Movimiento</td><td>15–20 min andando a estación o taxi/bus corto</td></tr>
+      <tr><td>Para Città Alta</td><td>Muy cómodo: funicular, bus o paseo</td></tr>
+    </table>
+  </div>
+  <div class="hotel-hero"><div><div class="eyebrow">Bérgamo centro</div><h2 style="margin:0;font-size:34px;">Base segura y bonita</h2></div></div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Sitios clave del viaje</h2>
+  <p class="section-subtitle">Bérgamo para dormir, Lago Como como día estrella, Milán como visita icónica y Verona como excursión con más encanto.</p>
+  <div class="grid grid-4">
+    <a class="card image-card" href="https://upload.wikimedia.org/wikipedia/commons/3/39/Italia_Bergamo_15.JPG" target="_blank"><img loading="lazy" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x1000/?bergamo,citta-alta,italy';" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Italia_Bergamo_15.JPG" alt="Bérgamo Città Alta"><div class="card-body"><h3>Bérgamo</h3><p>Città Alta, murallas venecianas, plazas medievales y aperitivo italiano.</p></div></a>
+    <a class="card image-card" href="https://source.unsplash.com/1600x1000/?lake-como,bellagio,italy" target="_blank"><img loading="lazy" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x1000/?lake-como,bellagio,italy';" src="https://source.unsplash.com/1600x1000/?lake-como,bellagio,italy" alt="Lago Como y Bellagio"><div class="card-body"><h3>Lago Como</h3><p>Varenna + Bellagio. El día más visual y especial del viaje.</p></div></a>
+    <a class="card image-card" href="https://source.unsplash.com/1600x1000/?milan,duomo" target="_blank"><img loading="lazy" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x1000/?milan,duomo,italy';" src="https://source.unsplash.com/1600x1000/?milan,duomo" alt="Duomo de Milán"><div class="card-body"><h3>Milán</h3><p>Duomo, Galería Vittorio Emanuele, Brera y paseo urbano.</p></div></a>
+    <a class="card image-card" href="https://source.unsplash.com/1600x1000/?verona,arena,italy" target="_blank"><img loading="lazy" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x1000/?verona,arena,italy';" src="https://source.unsplash.com/1600x1000/?verona,arena,italy" alt="Arena de Verona"><div class="card-body"><h3>Verona</h3><p>Arena romana, Piazza delle Erbe, río Adigio y centro histórico.</p></div></a>
+  </div>
+  <p class="photo-credit">Las fotos están enlazadas desde internet. He añadido carga alternativa automática: si una URL primaria falla, se sustituye por una foto real de Unsplash relacionada con el destino.</p>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Más alternativas visuales</h2>
+  <p class="section-subtitle">Para tener más contexto de las excursiones posibles.</p>
+  <div class="grid grid-3">
+    <a class="card image-card" href="https://source.unsplash.com/1600x1000/?bellagio,lake-como" target="_blank"><img loading="lazy" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x1000/?bellagio,lake-como';" src="https://source.unsplash.com/1600x1000/?bellagio,lake-como" alt="Bellagio en Lago Como"><div class="card-body"><h3>Bellagio</h3><p>El pueblo más icónico del Lago Como.</p></div></a>
+    <a class="card image-card" href="https://source.unsplash.com/1600x1000/?lake-iseo,italy" target="_blank"><img loading="lazy" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x1000/?lake-iseo,monte-isola,italy';" src="https://source.unsplash.com/1600x1000/?lake-iseo,italy" alt="Monte Isola Lago Iseo"><div class="card-body"><h3>Lago Iseo</h3><p>Plan B más tranquilo y local.</p></div></a>
+    <a class="card image-card" href="https://source.unsplash.com/1600x1000/?verona,arena,italy" target="_blank"><img loading="lazy" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x1000/?verona,piazza-bra';" src="https://source.unsplash.com/1600x1000/?verona,arena,italy" alt="Verona Piazza Bra"><div class="card-body"><h3>Verona</h3><p>La alternativa más bonita frente a una excursión excesiva a Venecia.</p></div></a>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Planning propuesto</h2>
+  <p class="section-subtitle">Plan base sin coche, evitando cambios de hotel. El jueves se puede ajustar entre Verona, Lago Iseo o un día más suave.</p>
+  <div class="timeline">
+    <div class="day"><div class="day-label">Domingo 5</div><div><h3>Llegada a Bérgamo</h3><p><strong>Vuelo:</strong> Zaragoza 12:45 → Bérgamo 14:35.</p><ul><li>Taxi o bus al Hotel Excelsior San Marco.</li><li>Check-in y primera subida suave a Città Alta.</li><li>Piazza Vecchia, murallas y cena tranquila.</li></ul></div></div>
+    <div class="day"><div class="day-label">Lunes 6</div><div><h3>Bérgamo completa</h3><p>Día para conocer la ciudad sin trenes ni prisas.</p><ul><li>Città Alta, Santa Maria Maggiore, Cappella Colleoni.</li><li>Paseo por murallas venecianas.</li><li>Opcional: San Vigilio si apetece mirador.</li></ul></div></div>
+    <div class="day"><div class="day-label">Martes 7</div><div><h3>Lago Como: Varenna + Bellagio</h3><p><strong>Salida recomendada:</strong> 07:30–08:00 desde Bérgamo.</p><ul><li>Tren Bérgamo → Lecco / Varenna.</li><li>Paseo por Varenna y ferry a Bellagio.</li><li>Comida, paseo por el centro y vuelta a Bérgamo por la tarde.</li></ul></div></div>
+    <div class="day"><div class="day-label">Miércoles 8</div><div><h3>Milán</h3><p><strong>Tren:</strong> Bérgamo → Milano Centrale, aprox. 48–50 min.</p><ul><li>Duomo, Galería Vittorio Emanuele II, Brera y Castello Sforzesco.</li><li>Volver a Bérgamo para dormir.</li></ul></div></div>
+    <div class="day"><div class="day-label">Jueves 9</div><div><h3>Excursión a elegir: Verona / Iseo / Lecco</h3><p><strong>Opción recomendada:</strong> Verona. Desde Bérgamo aprox. 1h50 con cambio en Brescia.</p><ul><li>Verona: Arena, Piazza Bra, Piazza delle Erbe, Ponte Pietra, Castelvecchio.</li><li>Alternativa tranquila: Lago Iseo + Monte Isola.</li><li>Alternativa suave: Lecco y vuelta temprano.</li></ul></div></div>
+    <div class="day"><div class="day-label">Viernes 10</div><div><h3>Vuelta a Zaragoza</h3><p><strong>Vuelo:</strong> Bérgamo 10:05 → Zaragoza 12:00.</p><ul><li>Recomendado taxi al aeropuerto sobre 07:15.</li></ul></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Excursiones posibles</h2>
+  <p class="section-subtitle">Ordenadas por prioridad para no convertir el viaje en una carrera.</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="card-body"><span class="pill">Imprescindible</span><h3>Lago Como</h3><p>Varenna + Bellagio. Mejor día paisajístico. Hacerlo en tren + ferry, sin coche.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill">Muy recomendable</span><h3>Verona</h3><p>Más encanto que Milán para pasear. Aproximadamente 1h50 por trayecto.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill blue">Cómoda</span><h3>Milán</h3><p>Muy fácil desde Bérgamo. Ideal para ver Duomo, galería y Brera en un día.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill orange">Plan B</span><h3>Lago Iseo</h3><p>Más tranquilo y local. Puede mejorar con coche puntual si se añade Franciacorta.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill orange">Plan suave</span><h3>Lecco</h3><p>Fácil, cómodo y menos exigente. Buena opción si hace calor o hay cansancio.</p></div></div>
+    <div class="card"><div class="card-body"><span class="pill orange">Descartaría</span><h3>Venecia en el día</h3><p>Unas 3h por trayecto. Demasiada paliza para una excursión desde Bérgamo.</p></div></div>
+  </div>
+</section>
+
+<section class="section narrow">
+  <h2 class="section-title">Presupuesto revisado</h2>
+  <p class="section-subtitle">Con vuelos, maleta de mano y Hotel Excelsior San Marco con desayuno.</p>
+  <table>
+    <tr><th>Concepto</th><th>2 personas</th><th>Por persona</th></tr>
+    <tr><td>Vuelos base ida/vuelta</td><td>124 €</td><td>62 €</td></tr>
+    <tr><td>Maleta de mano: 38 € por trayecto y persona</td><td>152 €</td><td>76 €</td></tr>
+    <tr><td><strong>Total vuelos + maleta</strong></td><td><strong>276 €</strong></td><td><strong>138 €</strong></td></tr>
+    <tr><td>Hotel Excelsior San Marco, 5 noches con desayuno</td><td>519 €</td><td>259,50 €</td></tr>
+    <tr class="total-row"><td>Total fijo</td><td>795 €</td><td>397,50 €</td></tr>
+    <tr><td>Trenes, buses y ferries</td><td>120–180 €</td><td>60–90 €</td></tr>
+    <tr><td>Comidas, cenas, aperitivos</td><td>400–550 €</td><td>200–275 €</td></tr>
+    <tr><td>Entradas y extras</td><td>60–120 €</td><td>30–60 €</td></tr>
+    <tr class="total-row"><td>Total realista del viaje</td><td>1.375–1.645 €</td><td>690–825 €</td></tr>
+  </table>
+</section>
+
+<section class="section narrow">
+  <div class="callout">
+    <h2>Conclusión</h2>
+    <p>La fórmula más equilibrada sería: Bérgamo como base, Lago Como como excursión estrella, Milán por facilidad y Verona como día bonito de ciudad italiana.</p>
+    <p><strong>Plan recomendado:</strong> Bérgamo + Lago Como + Milán + Verona. Iseo o Lecco quedan como alternativas flexibles si apetece algo más tranquilo.</p>
+  </div>
+</section>
+
+<footer class="footer">Landing preparada para valorar la escapada Zaragoza → Bérgamo · Julio 2026</footer>
+</body>
+</html>
