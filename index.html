@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escapada Norte de Italia · Bérgamo, Lagos y Verona</title>
+  <style>
+    :root {
+      --bg:#f7f3ec; --ink:#1f2933; --muted:#64748b; --card:#fff;
+      --accent:#0f766e; --accent2:#b45309; --dark:#102a43;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    img { width:100%; display:block; object-fit:cover; }
+    a { color:inherit; text-decoration:none; }
+    .hero {
+      min-height:88vh;
+      background:linear-gradient(90deg,rgba(15,23,42,.82),rgba(15,23,42,.34)),url("https://upload.wikimedia.org/wikipedia/commons/3/39/Italia_Bergamo_15.JPG");
+      background-size:cover; background-position:center; color:#fff; display:flex; align-items:center; padding:48px 6vw;
+    }
+    .hero-inner { max-width:980px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:13px; font-weight:800; opacity:.9; margin-bottom:18px; }
+    h1 { font-size:clamp(42px,7vw,84px); line-height:.95; margin:0 0 24px; max-width:900px; }
+    .hero p { max-width:720px; font-size:clamp(18px,2vw,24px); margin:0 0 28px; color:#e2e8f0; }
+    .badges { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .badge { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(8px); padding:10px 14px; border-radius:999px; font-weight:800; font-size:14px; }
+    .section { padding:72px 6vw; max-width:1240px; margin:0 auto; }
+    .section.narrow { max-width:980px; }
+    .section-title { font-size:clamp(30px,4vw,52px); line-height:1.05; margin:0 0 14px; color:var(--dark); }
+    .section-subtitle { color:var(--muted); font-size:18px; max-width:760px; margin:0 0 34px; }
+    .grid { display:grid; gap:22px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card { background:var(--card); border-radius:24px; overflow:hidden; box-shadow:0 18px 45px rgba(15,23,42,.10); border:1px solid rgba(15,23,42,.06); }
+    .card-body { padding:24px; }
+    .card h3 { margin:0 0 8px; font-size:24px; color:var(--dark); }
+    .card p { margin:0; color:var(--muted); }
+    .image-card img { height:250px; background:#ddd; }
+    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#ecfdf5; color:#047857; font-weight:900; font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-[...] }
+    .pill.orange { background:#fff7ed; color:#b45309; }
+    .pill.blue { background:#eff6ff; color:#1d4ed8; }
+    table { width:100%; border-collapse:collapse; background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 18px 45px rgba(15,23,42,.08); }
+    th,td { padding:16px 18px; text-align:left; border-bottom:1px solid #e5e7eb; vertical-align:top; }
+    th { background:#102a43; color:white; font-size:14px; text-transform:uppercase; letter-spacing:.08em; }
+    tr:last-child td { border-bottom:0; }
+    .total-row td { font-weight:900; background:#f0fdfa; color:#0f766e; }
+    .timeline { display:grid; gap:18px; }
+    .day { display:grid; grid-template-columns:130px 1fr; gap:22px; background:#fff; border-radius:24px; padding:22px; box-shadow:0 12px 32px rgba(15,23,42,.08); }
+    .day-label { font-weight:900; color:var(--accent2); text-transform:uppercase; letter-spacing:.08em; font-size:13px; }
+    .day h3 { margin:0 0 6px; font-size:24px; }
+    .day ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
+    .split { display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; }
+    .hotel-hero { min-height:380px; background:linear-gradient(180deg,rgba(15,23,42,.08),rgba(15,23,42,.72)),url("https://upload.wikimedia.org/wikipedia/commons/3/39/Italia_Bergamo_15.JPG"); backg...
